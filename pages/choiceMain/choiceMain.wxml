@@ -1,0 +1,48 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    
+    <view class="page__bd">
+        <view class="weui-cells__title">{{questionList.title}}</view>
+        
+        
+        <view wx:if="{{questionList.type == 1}}" class="weui-cells weui-cells_after-title">
+            <radio-group bindchange="radioChange">
+                <label class="weui-cell weui-check__label" wx:for="{{questionList.items}}" wx:key="value">
+                    <radio class="weui-check" value="{{item.seqNo}}" checked="{{item.checked}}"/>
+
+                    <view class="weui-cell__bd">{{item.text}}</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+                        <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+                    </view>
+                </label>
+            </radio-group>
+        </view>
+
+
+        
+        <view wx:if="{{questionList.type == 2}}" class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea"  value='{{ansText}}' placeholder="请输入文本" style="height: 3.3em" bindblur='bindTextAreaBlur'/>
+                    <view class="weui-textarea-counter">0/200</view>
+                </view>
+            </view>
+        </view>
+
+        
+
+        <view wx:if="{{index != (total-1) && total > 0}}"  class="weui-btn-area">
+            <button  class="weui-btn" type="primary" bindtap="showNext">下一题</button>
+        </view>
+
+
+        <view wx:if="{{total > 0 && index == (total-1)}} "  class="weui-btn-area">
+            <button  class="weui-btn" type="primary" bindtap="showNext">交卷</button>
+        </view>
+
+        <view wx:if="{{index != 0 && total >0}}" class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="showPre">上一题</button>
+        </view>
+
+
+    </view>
+</view>

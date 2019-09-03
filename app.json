@@ -1,0 +1,30 @@
+{
+  "pages":[
+    "pages/registe/registe",
+    "pages/choiceMain/choiceMain",
+    "pages/me/me"],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#1bd0bd",
+    "navigationBarTitleText": "调查问卷",
+    "navigationBarTextStyle":"white"
+  },
+ "tabBar": {
+  "selectedColor": "#1bd0db",
+  "color": "#dae5e5",
+  "list": [
+    {
+      "text": "问卷",
+      "iconPath": "images/7-01.png",
+      "selectedIconPath": "images/6-01.png",
+      "pagePath": "pages/choiceMain/choiceMain"
+    },
+    {
+      "text": "我的",
+      "iconPath": "images/7-01.png",
+      "selectedIconPath": "images/6-01.png",
+      "pagePath": "pages/me/me"
+    }
+  ]
+}
+}
